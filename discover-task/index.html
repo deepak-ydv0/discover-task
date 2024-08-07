@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Unit</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 300px;
+        width: 750px;
+        /* background-color: red; */
+        display: flex;
+        position: relative;
+      }
+
+      .bgColor {
+        height: 170px;
+        width: 750px;
+        background-color: #faebd6;
+        margin-top: 45px;
+
+        border-bottom-left-radius: 43px;
+        border-bottom-right-radius: 130px;
+        display: flex;
+      }
+
+      .main {
+        /* position: absolute; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .videoContainer {
+        width: 60%;
+      }
+      video {
+        width: 420px;
+
+        position: absolute;
+        top: 30px;
+        left: 15px;
+      }
+      .volumebtn {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 50px;
+        left: 370px;
+        z-index: 1000;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        
+      }
+      .subHeading {
+        
+        font-weight: bolder;
+        font-size: 1.9rem;
+        
+      }
+      .span {
+        color: #e2612f;
+      }
+      .subHeading2 {
+        font-weight: bold;
+        font-size: 1.4rem;
+        padding-inline: 15px;
+       
+      }
+      .payFoo{
+        margin-top: 5px;
+      }
+      .withUP{
+        padding-inline: 25px;
+      }
+      .logo{
+      
+        position: absolute;
+        right: 190px;
+        top: 225px;
+      }
+      .logo img{
+        width: 115px;
+        height: 42px;
+      }
+      .button{
+        width: 160px;
+        height: 42px;
+        text-align: center;
+        color: white;
+        background-color:  #e2612f;
+        border-radius: 30px;
+        padding-top: 7px;
+        padding-inline: 8px;
+        position: absolute;
+        right: 10px;
+        top: 225px;
+
+        font-size: 25px;
+      }
+      .close img{
+        width: 40px;
+        position: absolute;
+        right: 4px;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="adUnit">
+        <div class="container">
+            <div class="bgColor">
+              <div class="videoContainer">
+                <video autoplay muted loop>
+                  <source src="./assets/discover.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <img
+                  class="volumebtn"
+                  src="./assets/volume-on-outline.svg"
+                  alt="muted"
+                />
+              </div>
+      
+              <div class="main">
+                <div class="text">
+                  <p class="subHeading">See debt consolidation</p>
+                  <p class="subHeading " style="padding-inline: 15px;">
+                    in <span class="span">a whole new light</span>
+                  </p>
+                  <p class="subHeading2 payFoo">Pay foo higher-rate debt</p>
+                  <p class="subHeading2 withUP">with up to $40K.</p>
+                </div>
+                
+              </div>
+      
+            </div>
+            <div class="logo">
+              <img src="./assets/discover-logo.png" alt="">
+            </div>
+      
+            <div class="button">
+              Learn More
+            </div>
+      
+            <div class="close">
+              <img src="./assets/close.svg" alt="">
+            </div>
+          </div>
+    </div>
+    
+  </body>
+
+</html>
