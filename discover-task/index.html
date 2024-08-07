@@ -25,8 +25,8 @@
         background-color: #faebd6;
         margin-top: 45px;
 
-        border-bottom-left-radius: 43px;
-        border-bottom-right-radius: 130px;
+        border-bottom-left-radius: 250px 43px;
+        border-bottom-right-radius: 250px 43px;
         display: flex;
       }
 
@@ -56,16 +56,17 @@
         z-index: 1000;
       }
 
+      #unmute {
+        display: none;
+      }
+
       .text {
         display: flex;
         flex-direction: column;
-        
       }
       .subHeading {
-        
         font-weight: bolder;
         font-size: 1.9rem;
-        
       }
       .span {
         color: #e2612f;
@@ -74,30 +75,28 @@
         font-weight: bold;
         font-size: 1.4rem;
         padding-inline: 15px;
-       
       }
-      .payFoo{
+      .payFoo {
         margin-top: 5px;
       }
-      .withUP{
+      .withUP {
         padding-inline: 25px;
       }
-      .logo{
-      
+      .logo {
         position: absolute;
         right: 190px;
         top: 225px;
       }
-      .logo img{
+      .logo img {
         width: 115px;
         height: 42px;
       }
-      .button{
+      .button {
         width: 160px;
         height: 42px;
         text-align: center;
         color: white;
-        background-color:  #e2612f;
+        background-color: #e2612f;
         border-radius: 30px;
         padding-top: 7px;
         padding-inline: 8px;
@@ -107,7 +106,7 @@
 
         font-size: 25px;
       }
-      .close img{
+      .close img {
         width: 40px;
         position: absolute;
         right: 4px;
@@ -116,48 +115,73 @@
     </style>
   </head>
   <body>
-    <div class="adUnit">
-        <div class="container">
-            <div class="bgColor">
-              <div class="videoContainer">
-                <video autoplay muted loop>
-                  <source src="./assets/discover.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                <img
-                  class="volumebtn"
-                  src="./assets/volume-on-outline.svg"
-                  alt="muted"
-                />
-              </div>
-      
-              <div class="main">
-                <div class="text">
-                  <p class="subHeading">See debt consolidation</p>
-                  <p class="subHeading " style="padding-inline: 15px;">
-                    in <span class="span">a whole new light</span>
-                  </p>
-                  <p class="subHeading2 payFoo">Pay foo higher-rate debt</p>
-                  <p class="subHeading2 withUP">with up to $40K.</p>
-                </div>
-                
-              </div>
-      
-            </div>
-            <div class="logo">
-              <img src="./assets/discover-logo.png" alt="">
-            </div>
-      
-            <div class="button">
-              Learn More
-            </div>
-      
-            <div class="close">
-              <img src="./assets/close.svg" alt="">
+   
+      <div class="container">
+        <div class="bgColor">
+          <div class="videoContainer">
+            <video id="video" autoplay loop>
+              <source src="./assets/discover.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <img
+              class="volumebtn"
+              id="mute"
+              src="./assets/volume-on-outline.svg"
+              alt="muted"
+            />
+            <img
+              class="volumebtn"
+              id="unmute"
+              src="./assets/outline=sound-off.svg"
+              alt="unmuted"
+            />
+          </div>
+
+          <div class="main">
+            <div class="text">
+              <p class="subHeading">See debt consolidation</p>
+              <p class="subHeading" style="padding-inline: 15px">
+                in <span class="span">a whole new light</span>
+              </p>
+              <p class="subHeading2 payFoo">Pay off higher-rate debt</p>
+              <p class="subHeading2 withUP">with up to $40K.</p>
             </div>
           </div>
-    </div>
-    
-  </body>
+        </div>
+        <div class="logo">
+          <img src="./assets/discover-logo.png" alt="" />
+        </div>
 
+        <div class="button">Learn More</div>
+
+        <div class="close">
+          <img src="./assets/close.svg" alt="" />
+        </div>
+      </div>
+    
+    <script>
+      const mute = document.getElementById("mute");
+      const video = document.getElementById("video");
+      const unmuteBtn = document.getElementById("unmute");
+
+      mute.onclick = function () {
+
+        if (!video.muted) {
+        video.muted = !video.muted;
+
+          unmuteBtn.style.display = " block";
+          mute.style.display ="none"
+        } 
+      };
+      unmuteBtn.onclick = function(){
+            if (video.muted) {
+                video.muted = !video.muted;
+          unmuteBtn.style.display = " none";
+          mute.style.display ="block"
+
+        }
+      }
+    </script>
+  </body>
 </html>
+ss
